@@ -1,4 +1,5 @@
-﻿using eShopSolution.Data.Entities;
+﻿using eShopSolution.Data.Configurations;
+using eShopSolution.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace eShopSolution.Data.EF
@@ -9,12 +10,20 @@ namespace eShopSolution.Data.EF
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new AppConfigConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            //base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<AppConfig> AppConfigs { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CategoryTranslation> CategoryTranslations { get; set; }
-        public DbSet<ProductInCategory> ProductInCategories { get; set; }
+        //public DbSet<ProductInCategory> ProductInCategories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Order> Orders { get; set; }
@@ -22,7 +31,7 @@ namespace eShopSolution.Data.EF
         public DbSet<ProductTranslation> ProductTranslations { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<Slide> Slides { get; set; }
+        //public DbSet<ProductImage> ProductImages { get; set; }
+        //public DbSet<Slide> Slides { get; set; }
     }
 }

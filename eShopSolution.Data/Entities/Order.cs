@@ -7,7 +7,7 @@ namespace eShopSolution.Data.Entities
     {
         public int Id { get; set; }
         public DateTime OrderDate { get; set; }
-        public int UserId { get; set; }
+        public Guid UserId { get; set; }
         public int ShipName { get; set; }
         public int ShipAddress { get; set; }
         public int ShipEmail { get; set; }

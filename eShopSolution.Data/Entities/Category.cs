@@ -1,4 +1,5 @@
 ﻿using eShopSolution.Data.Enums;
+using System.Collections.Generic;
 
 namespace eShopSolution.Data.Entities
 {
@@ -9,5 +10,8 @@ namespace eShopSolution.Data.Entities
         public bool IsShowOnHome { get; set; }
         public int? ParentId { get; set; }
         public Status Status { get; set; }
+
+        //Foreign Key Define
+        public List<ProductInCategory> ProductInCategories { get; set; }
     }
 }

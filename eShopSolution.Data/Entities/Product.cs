@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace eShopSolution.Data.Entities
 {
@@ -11,5 +12,8 @@ namespace eShopSolution.Data.Entities
         public int ViewCount { get; set; }
         public DateTime DateCreated { get; set; }
         public string SeoAlias { get; set; }
+
+        //ForeignKey Define
+        public List<ProductInCategory> ProductInCategories { get; set; }
     }
 }
